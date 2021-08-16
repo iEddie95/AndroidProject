@@ -1,2 +1,2 @@
-# AndroidProject
-REmindey- Reminders app to help you not forget a thing
+# REmindey
+Reminders app to help you not forget a thing
