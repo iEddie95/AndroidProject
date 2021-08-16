@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="pills_reminders"
+        android:title="Pills Reminders">
+
+        <DropDownPreference
+            android:key="time_a_day_pills"
+            android:defaultValue="times_a_day_one"
+            android:title="Times a day"
+            app:entryValues="@array/times_a_day_value"
+            android:entries="@array/times_a_day"
+            app:useSimpleSummaryProvider="true"
+            />
+
+        <EditTextPreference
+            android:key="pill_name"
+            android:title="Pill Name"
+            app:useSimpleSummaryProvider="true"
+            android:summary=""
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Set time"
+        android:key="set_time"
+        ></PreferenceCategory>
+
+    <Preference
+        android:title="Set end date"
+        android:key="end_date"
+        />
+
+    <PreferenceCategory
+        android:title="Food reminder"
+        android:summary="Remind to eat before/after taking pills"
+        android:key="food_reminder">
+        <SwitchPreference
+            android:key="enable_food"
+            android:title="Enable reminders"
+            android:summaryOff="disabled"
+            android:summaryOn="enabled"
+            />
+
+        <DropDownPreference
+            android:dependency="enable_food"
+            android:key="before_after_food"
+            android:title="Eat before/after taking pills"
+            app:entryValues="@array/before_after_eat_value"
+            android:entries="@array/before_after_eat"
+            android:defaultValue="-1"
+            app:useSimpleSummaryProvider="true"
+            />
+
+        <DropDownPreference
+            android:dependency="enable_food"
+            android:key="time_eat"
+            android:title="When to eat"
+            app:entryValues="@array/time_eat_value"
+            android:entries="@array/time_eat"
+            android:defaultValue="60"
+            app:useSimpleSummaryProvider="true"
+            />
+
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

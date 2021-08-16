@@ -1,0 +1,86 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/location_header">
+
+        <SwitchPreference
+            android:key="geofence"
+            android:title="Home location reminders"
+            android:summaryOn="Enabled"
+            android:summaryOff="Enable to get reminders when you get in/out home"
+            />
+
+        <Preference
+            android:key="my_location"
+            android:summary="Not Set"
+            app:title="@string/location_title"
+            app:useSimpleSummaryProvider="true"
+            android:dependency="geofence"/>
+
+        <Preference
+            app:key="set_current_location"
+            app:title="Use Current Location as Home"
+            android:dependency="geofence"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/personal_header">
+
+        <SwitchPreference
+            android:key="snooze_high"
+            android:title="Auto snooze high priority reminders"
+            android:summary="Snooze reminders after click on done, for making sure you have done them"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Build-in reminders">
+
+        <SwitchPreference
+            app:key="lock_home_in"
+            android:title="Remind to lock home when getting home"
+            android:summary="Pops after 5 minutes"
+            android:dependency="geofence"
+            />
+
+        <SwitchPreference
+            app:key="lock_home_out"
+            android:title="Remind to lock home when getting out"
+            android:summary="Pops immediately"
+            android:dependency="geofence"
+            />
+
+        <SwitchPreference
+            android:key="pet_feed"
+            android:title="Feed my pet"
+            android:summary="10 minutes after arrive home"
+            android:dependency="geofence"
+            />
+
+        <SwitchPreference
+            android:key="laundry_check"
+            android:title="Check laundry"
+            android:summary="10 minutes after arrive home"
+            android:dependency="geofence"
+            />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Reminder Templates">
+        <EditTextPreference
+            android:key="FEED_PET_ROUTINE"
+            android:title="Feed my pet schedule"
+            android:dialogTitle="Enter pet name"
+            android:summary="Default: 3 times/day. You can always edit via the reminder"
+            />
+
+        <Preference
+            android:key="set_pills"
+            android:title="Pills reminders"
+            android:summary="Create reminders for taking pills"
+            />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

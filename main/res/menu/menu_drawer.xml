@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.afeka.remindey.MainActivity"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/category_group"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_today"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/menu_today" />
+        <item
+            android:id="@+id/nav_tomorrow"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/menu_tomorrow" />
+
+        <item
+            android:id="@+id/nav_all"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="@string/menu_all" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_add_list"
+            android:icon="@drawable/ic_baseline_add_box_24"
+            android:title="@string/menu_add_list" />
+    </group>
+
+</menu>

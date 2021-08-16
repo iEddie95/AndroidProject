@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addListLayout"
+    style="@style/Animation.Design.BottomSheetDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:overScrollMode="always"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="@dimen/dimen_32"
+    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <EditText
+        android:id="@+id/enter_list_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_16"
+        android:hint="@string/enter_list_hint"
+        android:inputType="textPersonName"
+        android:padding="@dimen/dimen_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add_list_button"
+        android:layout_width="70dp"
+        android:layout_height="72dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="TODO"
+        android:scaleX="0.4"
+        android:scaleY="0.4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_list_name"
+        app:srcCompat="@drawable/ic_baseline_arrow_circle_up_24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

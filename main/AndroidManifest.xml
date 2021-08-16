@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.afeka.remindey">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <application
+        android:name=".util.RemindeyApi"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_repeat"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_repeat_round"
+        android:supportsRtl="true"
+        android:testOnly="false"
+        android:theme="@style/Theme.REmindey">
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName="com.afeka.remindey.MainActivity"
+        />
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".LoginActivity">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.REmindey.NoActionBar" />
+
+        <receiver
+            android:name=".util.ReminderReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.INPUT_METHOD_CHANGED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".util.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".util.LocationService"
+            android:enabled="true"
+            android:exported="true" />
+    </application>
+
+</manifest>
